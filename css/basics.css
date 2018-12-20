@@ -1,0 +1,59 @@
+@charset "UTF-8";
+
+:root {
+    --main-bg-color: #dedede;
+    --default-padding: 20px;
+}
+
+body {
+    background: var(--main-bg-color);
+    padding: 20px 0 0 0;
+    margin: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    margin-top: 0;
+}
+
+ul {
+    padding: 0;
+    list-style: none;
+}
+
+li::before {
+    content: "🙈";
+    display: inline-block;
+    margin-right: var(--default-padding);
+}
+
+
+.content {
+    position: relative;
+    background: #fff;
+    max-width: 640px;
+    margin: 0 auto var(--default-padding) auto;
+    padding: var(--default-padding);
+    min-height: 300px;
+}
+
+.content:before, .content:after
+{
+    z-index: -1;
+    position: absolute;
+    content: "";
+    bottom: 15px;
+    left: 10px;
+    width: 50%;
+    top: 80%;
+    max-width:300px;
+    background: #777;
+    box-shadow: 0 15px 10px #777;
+    transform: rotate(-3deg);
+}
+.content:after
+{
+    transform: rotate(3deg);
+    right: 10px;
+    left: auto;
+}
